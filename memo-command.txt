@@ -1,0 +1,16 @@
+※ migrate:refresh
+down() を実行してから up() を実行する。
+
+
+※ migrate:fresh
+全テーブルを削除してから up() を実行する。
+
+
+※ php artisan migrate:fresh --seed
+全てのテーブルを刷新。seederからデータを入れる。
+
+
+※ キャッシュのクリア
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear
