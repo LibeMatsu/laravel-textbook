@@ -1,3 +1,46 @@
+【 作成系 】
+
+※ php artisan make:model モデル名
+
+
+※ php artisan make:migration マイグレーション名
+※ php artisan make:migration マイグレーション名 --table=既存のテーブル名
+マイグレーション名は
+create_posts_table
+add_columns_to_users
+のように書く
+
+↓
+php artisan make:model モデル名 -m
+-mを付けると、modelと同時にマイグレーションファイルが作れる
+
+
+
+※ php artisan make:controller コントローラー名
+(コントローラー名はアッパーキャメルケースにする)
+
+↓
+php artisan make:controller コントローラー名 --resource
+php artisan make:controller コントローラー名 --resource --model=Product
+CRUDを書く準備のできた？ファイルができる
+
+
+
+
+
+
+
+【 実行系 】
+
+※ php artisan migrate
+マイグレートを実行
+
+
+※ php artisan migrate:reset
+マイグレートを取り消す
+
+
+
 ※ migrate:refresh
 down() を実行してから up() を実行する。
 
@@ -8,6 +51,44 @@ down() を実行してから up() を実行する。
 
 ※ php artisan migrate:fresh --seed
 全てのテーブルを刷新。seederからデータを入れる。
+
+
+
+
+
+
+【 Seeder / Factory / test 】
+
+※ php artisan make:factory なんとかFactory
+Factoryファイルの作成
+
+
+※ php artisan make:seeder なんとかSeeder
+Seederファイルの作成
+
+php artisan db:seed
+シーディングの実行
+
+php artisan db:seed --class=シーダークラス名
+特定のSeederを実行する
+
+
+
+※ php artisan make:test テストクラス名
+テストファイルの作成
+
+php artisan test テストファイル
+テストの実行
+
+
+
+
+
+
+【 その他 】
+
+※ 有効になっているrouteの一覧表示
+php artisan route:list
 
 
 ※ キャッシュのクリア
