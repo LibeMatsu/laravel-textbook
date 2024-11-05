@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // ↓emailカラムの次にstring型のtestという名前のカラムを追加
+            $table->string('test')->after('email');
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // ↓追加したカラムを削除する処理
+            $table->dropColumn('test');
         });
     }
 };

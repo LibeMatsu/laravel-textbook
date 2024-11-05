@@ -37,8 +37,7 @@ CRUDを書く準備のできた？ファイルができる
 
 
 ※ php artisan migrate:reset
-マイグレートを取り消す
-
+マイグレートを取り消す（本気のリセット注意。データ消える）
 
 
 ※ migrate:refresh
