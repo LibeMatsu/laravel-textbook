@@ -1,0 +1,38 @@
+
+◆ create
+composer create-project "laravel/laravel=10.*" laravel-textbook
+
+◆ timezoneの変更
+config/app.phpにてAsia/Tokyoに
+
+
+◆ phpmyadminでデータベースを作成
+
+
+◆ Laravelプロジェクトとデータベースを連携する
+.envにて（.envは設定ファイルなのでgitで追跡しない）
+
+
+◆ 認証を実装するならLaravel Breezeパッケージを追加する
+（ルーティングファイルが上書きされるので、早い段階で入れておいた方が良い）
+composer require laravel/breeze --dev
+
+
+◆ Laravel Breezeパッケージのインストール
+php artisan breeze:install
+※ Which Breeze stack would you like to install?（どのBreezeスタックをインストールしますか？）:	blade
+※ Would you like dark mode support?（ダークモードをサポートしますか？）:	no
+※ Which testing framework do you prefer?（テスト用のフレームワークはどちらを使いますか？）:  0（php unit）
+
+
+※ マイグレーションすると、laravelが用意してくれているデータベースが作成される
+php artisan migrate
+
+
+◆ 依存関係をインストール
+（laravelをインストールしたことによってpackage.jsonにTailwind CSSやAlpine.jsなどが追記されているので、インストール）
+npm install
+
+↓
+その後、アセット（Tailwind CSSやAlpine.jsなど）をビルド
+npm run build
