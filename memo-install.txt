@@ -2,6 +2,7 @@
 ◆ create
 composer create-project "laravel/laravel=10.*" laravel-textbook
 
+
 ◆ timezoneの変更
 config/app.phpにてAsia/Tokyoに
 
@@ -36,3 +37,18 @@ npm install
 ↓
 その後、アセット（Tailwind CSSやAlpine.jsなど）をビルド
 npm run build
+
+
+◆ 日本語に対応１
+config/app.phpにて 
+'locale' => 'ja'
+'faker_locale' => 'ja_JP'
+
+
+◆ 日本語に対応２
+php artisan lang:publish
+
+※ https://github.com/askdkc/breezejp（日本語化パッケージ）
+composer require askdkc/breezejp --dev
+php artisan breezejp
+
