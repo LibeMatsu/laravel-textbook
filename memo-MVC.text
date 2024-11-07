@@ -1,0 +1,28 @@
+◆ Model
+
+※ fillableで設定した値のみ、一括保存・更新処理を行う
+protected $fillable = [
+    'name1',
+    'name2',
+];
+
+※ gurdedで設定した値以外、一括保存・更新処理を行う
+protected $gurded = [
+    'name3',
+];
+
+
+
+
+
+◆ View
+
+
+
+
+
+◆ Controller
+
+
+
+
