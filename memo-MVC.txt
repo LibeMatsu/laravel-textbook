@@ -23,6 +23,10 @@ protected $gurded = [
 
 ◆ Controller
 
+※ Eloquent ORM
+use App\Models\モデル名;
+$変数 = モデル::all();
+みたいなかんじ。
 
 
 
