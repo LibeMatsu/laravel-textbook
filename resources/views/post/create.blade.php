@@ -7,7 +7,9 @@
 
     <div class="w-4/5 mx-auto py-10">
 
-        <form action="" class="space-y-5">
+        <form method="post" action="{{ route('post.store') }}" class="space-y-5">
+            @csrf
+
             <div>
                 <label for="title">件名</label>
                 <input type="text" name="title" id="title">
@@ -21,6 +23,7 @@
             <x-primary-button class="bg-lime-700">
                 送信する
             </x-primary-button>
+            
         </form>
 
     </div>
