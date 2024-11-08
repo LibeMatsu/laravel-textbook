@@ -31,7 +31,8 @@ class PostController extends Controller
 
 
     public function index() {
-        $posts=Post::all();
+        // 抽出条件を設定
+        $posts=Post::where('user_id', auth()->id())->get();
         return view('post.index', compact('posts'));
     }
 }
