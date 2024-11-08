@@ -23,15 +23,20 @@ protected $gurded = [
 
 ◆ Controller
 
-※ Eloquent ORM
-use App\Models\モデル名;
-$変数 = モデル::all();
-みたいなかんじ。
-
 ※ クエリビルダ
 use Illuminate\Support\Facades\DB;
 $変数 = DB::table('テーブル名')->get();
 みたいなかんじ。
+
+
+※ Eloquent ORM
+use App\Models\モデル名;
+$変数 = モデル::all();
+みたいなかんじ。
+↓
+Eagerロードで一度のクエリでまとめてデータを取得することも可能
+$変数 = モデル::with(リレーションしているテーブル);
+
 
 
 
