@@ -32,7 +32,10 @@ class PostController extends Controller
 
     public function index() {
         // 抽出条件を設定
-        $posts=Post::where('user_id', auth()->id())->get();
+        // $posts=Post::where('user_id', auth()->id())->get();
+
+        // Eagerロードを使用。（postと同時にuserのデータも一括で取得）
+        $posts=Post::with('user')->get();
         return view('post.index', compact('posts'));
     }
 }
