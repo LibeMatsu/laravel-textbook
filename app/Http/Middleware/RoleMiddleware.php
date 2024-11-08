@@ -15,6 +15,10 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if(auth()->user()->role == 'admin') {
+            return $next($request);
+        }
+
+        return redirect()->route('dashboard');        
     }
 }
