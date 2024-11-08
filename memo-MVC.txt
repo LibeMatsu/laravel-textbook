@@ -28,5 +28,10 @@ use App\Models\モデル名;
 $変数 = モデル::all();
 みたいなかんじ。
 
+※ クエリビルダ
+use Illuminate\Support\Facades\DB;
+$変数 = DB::table('テーブル名')->get();
+みたいなかんじ。
+
 
 
