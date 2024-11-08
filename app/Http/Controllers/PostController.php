@@ -18,7 +18,9 @@ class PostController extends Controller
                 'title' => 'required|max:20',
                 'body' => 'required|max:400',
             ]
-            );
+        );
+
+        $validated['user_id'] = auth()->id();
 
         $post = Post::create($validated);
 
