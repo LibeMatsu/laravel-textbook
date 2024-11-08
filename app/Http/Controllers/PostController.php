@@ -19,6 +19,7 @@ class PostController extends Controller
         ]);
 
         // 処理後、元のページに戻る
-        return back();
+        // セッションを使って保存時のメッセージを表示
+        return back()->with('message', '保存しました。');
     }
 }
