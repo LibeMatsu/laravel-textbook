@@ -16,6 +16,10 @@
             <p class="p-4">
                 {{ $post->body }}
             </p>
+            <p class="p-4">
+                <!-- デフォルト値を入れておくと値がnullだった時のエラーを回避できる -->
+                {{ $post->created_at }} / {{ $post->user->name??'匿名' }}
+            </p>
         </div>
     @endforeach
 
