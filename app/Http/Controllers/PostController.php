@@ -13,10 +13,14 @@ class PostController extends Controller
 
 
     public function store(Request $request) {
-        $post = Post::create([
-            'title' => $request->title,
-            'body' => $request->body
-        ]);
+        $validated = $request->validate(
+            [
+                'title' => 'required|max:20',
+                'body' => 'required|max:400',
+            ]
+            );
+
+        $post = Post::create($validated);
 
         // 処理後、元のページに戻る
         // セッションを使って保存時のメッセージを表示

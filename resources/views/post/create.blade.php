@@ -18,12 +18,14 @@
 
             <div>
                 <label for="title">件名</label>
-                <input type="text" name="title" id="title">
+                <x-input-error :messages="$errors->get('title')" class="mt-2" />
+                <input type="text" name="title" id="title" value="{{ old('title') }}">
             </div>
 
             <div>
                 <label for="body">本文</label>
-                <textarea name="body" id="body"></textarea>
+                <x-input-error :messages="$errors->get('body')" class="mt-2" />
+                <textarea name="body" id="body">{{ old('body') }}</textarea>
             </div>
 
             <x-primary-button class="bg-lime-700">
