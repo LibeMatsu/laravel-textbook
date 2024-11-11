@@ -90,7 +90,3 @@ php artisan test テストファイル
 php artisan route:list
 
 
-※ キャッシュのクリア
-php artisan route:clear
-php artisan config:clear
-php artisan cache:clear
