@@ -1,0 +1,22 @@
+【 Seeder / Factory / test 】
+
+※ php artisan make:factory なんとかFactory
+Factoryファイルの作成
+
+
+※ php artisan make:seeder なんとかSeeder
+Seederファイルの作成
+
+php artisan db:seed
+シーディングの実行
+
+php artisan db:seed --class=シーダークラス名
+特定のSeederを実行する
+
+
+
+※ php artisan make:test テストクラス名
+テストファイルの作成
+
+php artisan test テストファイル
+テストの実行
