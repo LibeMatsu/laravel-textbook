@@ -27,6 +27,23 @@ CRUDを書く準備のできた？ファイルができる
 
 
 
+↓
+php artisan make:model モデル名 -m -c -r
+モデル、マイグレーションファイル、コントローラー、リソースを一気に作るとかも可能。
+（※ リソースコントローラー ←CRUDを書く準備のできたコントローラー）
+
+
+
+※ CRUD
+Create
+Read
+Update
+Delete
+
+リソースコントローラーには、
+index, create, store, show, edit, update, destroy メソッドが含まれる。
+
+
 
 
 
