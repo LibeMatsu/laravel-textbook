@@ -1,0 +1,57 @@
+【 Policy 】
+https://readouble.com/laravel/10.x/ja/authorization.html#creating-policies
+
+※ php artisan make:policy PostPolicy
+※ php artisan make:policy PostPolicy --model=Post
+
+
+
+class PostPolicy
+{
+    public function update(User $user, Post $post)
+    {
+        // 自分の投稿かどうかをチェック
+        return $user->id === $post->user_id;
+    }
+
+    public function delete(User $user, Post $post)
+    {
+        // 管理者かどうかをチェック
+        return $user->is_admin;
+    }
+}
+
+
+
+App\Providers\AuthServiceProvider.php
+↓
+use App\Post;
+use App\Policies\PostPolicy;
+ 
+class AuthServiceProvider extends ServiceProvider
+・・・
+    /**
+     * アプリケーションのポリシーマッピング
+     *
+     * @var array
+     */
+    protected $policies = [
+        Post::class => PostPolicy::class,
+    ];
+・・・
+みたいな
+
+
+
+
+
+
+
+
+
+
+【 Gate 】
+
+
+
+
