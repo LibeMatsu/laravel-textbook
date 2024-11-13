@@ -40,3 +40,22 @@ $変数 = モデル::with(リレーションしているテーブル);
 
 
 
+
+
+■ HTTPメソッドについて
+
+Laravelでは、ブラウザとの通信にHTTPメソッドを使用。
+
+・情報を表示する時 ← GET
+(index, create, show, edit)
+
+
+・情報を投稿する時 ← POST
+(store, ※update)
+
+※ update ← PATCH
+
+
+・情報を削除する時 ← DELETE
+(destroy)
+
