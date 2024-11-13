@@ -20,7 +20,7 @@ class PostController extends Controller
         $validated = $request->validate(
             [
                 'title' => 'required|max:20',
-                'body' => 'required|max:400',
+                'body' => 'required|max:1000',
             ]
         );
 
@@ -58,7 +58,7 @@ class PostController extends Controller
         $validated = $request->validate(
             [
                 'title' => 'required|max:20',
-                'body' => 'required|max:400',
+                'body' => 'required|max:1000',
             ]
         );
 

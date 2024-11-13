@@ -22,7 +22,7 @@
         </div>
         <hr style="width:98%;" class="mx-auto">
         <p class="p-4 whitespace-pre-line">
-            {{ $post->body }}
+            {!! nl2br(e($post->body)) !!}
         </p>
         <p class="p-4 text-sm flex flex-row-reverse">
             {{ $post->created_at }}

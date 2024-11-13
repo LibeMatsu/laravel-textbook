@@ -17,7 +17,7 @@
             </h1>
             <hr style="width:98%;" class="mx-auto">
             <p class="p-4">
-                {{ $post->body }}
+                {{ Str::limit($post->body, 100) }}
             </p>
             <p class="p-4">
                 <!-- デフォルト値を入れておくと値がnullだった時のエラーを回避できる -->
