@@ -34,4 +34,4 @@ require __DIR__.'/auth.php';
 Route::get('post/create', [PostController::class, 'create'])->middleware(['auth', 'admin']);
 Route::post('post', [PostController::class, 'store']) ->name('post.store');
 Route::get('post', [PostController::class, 'index']);
-Route::get('podt/show/{post}', [PostController::class, 'show']) ->name('post.show');
+Route::get('post/show/{post}', [PostController::class, 'show']) ->name('post.show');
