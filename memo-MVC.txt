@@ -53,7 +53,7 @@ Laravelでは、ブラウザとの通信にHTTPメソッドを使用。
 ・情報を投稿する時 ← POST
 (store, ※update)
 
-※ update ← PATCH
+※ update ← PATCH or PUT
 
 
 ・情報を削除する時 ← DELETE
