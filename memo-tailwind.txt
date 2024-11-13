@@ -11,6 +11,14 @@ HTMLの中でその改行をそのまま表示する。
 
 
 
+
+
+◆ $post->bodyの最初の100文字だけを表示
+{{ Str::limit($post->body, 100) }}
+
+
+
+
 ◆ flex flex-row-reverse
 テキストの右寄せで使ってた。
 
