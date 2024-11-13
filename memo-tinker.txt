@@ -1,0 +1,29 @@
+▶ 起動
+php artisan tinker
+
+
+■ すべてのデータを取り出す
+テーブル名::all()
+
+
+■ 指定idのレコードを取り出し、カラムを出力
+$variable = テーブル名::find(1)
+$variable->カラム名
+
+
+■ レコードを追加する
+$variable = new variable()
+$variable->カラム名 = 'Hello tinker'
+$variable->save()
+
+
+■ 指定idのレコードを取り出し、削除する
+$variable = variable::find(1)
+$variable->delete()
+
+
+
+▶ 終了
+q
+exit
+または、CTRL+C
