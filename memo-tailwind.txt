@@ -1,0 +1,19 @@
+◆ whitespace-pre-line
+HTMLの中でその改行をそのまま表示する。
+これイイ(｢･ω･)｢
+
+.whitespace-pre-line {
+    white-space: pre-line;
+}
+
+
+
+◆ flex flex-row-reverse
+テキストの右寄せで使ってた。
+
+.flex {
+    display: flex;
+}
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
