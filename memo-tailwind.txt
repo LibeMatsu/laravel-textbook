@@ -2,9 +2,12 @@
 HTMLの中でその改行をそのまま表示する。
 これイイ(｢･ω･)｢
 
-.whitespace-pre-line {
-    white-space: pre-line;
-}
+<div class="whitespace-pre-line">
+    {!! nl2br(e($post->body)) !!}
+</div>
+↑
+※ {!! !!}：BladeテンプレートでHTMLをそのまま出力。
+※ e関数：テキストをエスケープして、XSS（クロスサイトスクリプティング）攻撃を防ぐ。
 
 
 
