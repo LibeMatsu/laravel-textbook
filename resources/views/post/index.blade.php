@@ -10,7 +10,10 @@
     @foreach($posts as $post)
         <div class="bg-white rounded-2xl mt-4">
             <h1 class="p-4 font-semibold">
-                {{ $post->title }}
+                件名：
+                <a href="{{ route('post.show', $post) }}" class="text-blue-600">
+                    {{ $post->title }}
+                </a>
             </h1>
             <hr style="width:98%;" class="mx-auto">
             <p class="p-4">
