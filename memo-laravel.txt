@@ -4,6 +4,19 @@ Post $postは、
 Postクラスの$postオブジェクト（Post型）
 
 
+◆ Postクラスのオブジェクト: 
+Postクラスから作られた実体。
+例えば、$post = new Post();とすると、$postはPostクラスのオブジェクトになる。
+
+◆ Post型のデータ: 
+Postクラスのオブジェクトが持つデータの型。
+例えば、Post $postと書くと、$postはPostクラスのオブジェクトであることを示している。
+
+ってCopilotさんが言ってた(﹡’ω’﹡)
+
+
+
+
 $post = Post::create($validated);
 ↑
 同じ意味。
@@ -14,9 +27,9 @@ $post = new Post($validated);
 $post->save();
 
 
+
 PostモデルでIlluminate\Database\Eloquent\Model;をextendしていて、
 $post->update()などの関数を使えるようにしてある。
-
 
 
 
