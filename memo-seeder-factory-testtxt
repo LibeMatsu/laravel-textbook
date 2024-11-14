@@ -8,7 +8,7 @@ Factoryファイルの作成
 Seederファイルの作成
 
 php artisan db:seed
-シーディングの実行
+シーディングの実行（DatabaseSeeder.phpに基づいたダミーデータを作成）
 
 php artisan db:seed --class=シーダークラス名
 特定のSeederを実行する
@@ -20,6 +20,8 @@ php artisan db:seed --class=シーダークラス名
 
 php artisan test テストファイル
 テストの実行
+
+
 
 
 
