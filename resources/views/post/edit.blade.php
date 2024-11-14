@@ -21,7 +21,7 @@
             @method('patch')
 
             <div>
-                <label for="title">件名</label>
+                <label for="title" class="block">件名</label>
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
                 <!-- value=デフォルトではデータベースの値を表示、バリデーションエラーが起こった時はエラー前の値を返す -->
                 <input type="text" name="title" id="title" value="{{ old('title', $post->title) }}" class="w-1/2">

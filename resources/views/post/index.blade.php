@@ -19,7 +19,7 @@
             <p class="p-4">
                 {{ Str::limit($post->body, 100) }}
             </p>
-            <p class="p-4">
+            <p class="p-4 text-sm">
                 <!-- デフォルト値を入れておくと値がnullだった時のエラーを回避できる -->
                 {{ $post->created_at }} / {{ $post->user->name??'匿名' }}
             </p>

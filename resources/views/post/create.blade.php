@@ -17,7 +17,7 @@
             @csrf
 
             <div>
-                <label for="title">件名</label>
+                <label for="title" class="block">件名</label>
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
                 <input type="text" name="title" id="title" value="{{ old('title') }}" class="w-1/2">
             </div>
