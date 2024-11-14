@@ -7,6 +7,14 @@
 
     <div class="w-4/5 mx-auto py-10">
 
+    
+    @if(session('message'))
+        <div class="text-red-600 font-bold">
+            {{ session('message')}}
+        </div>
+    @endif
+
+
     @foreach($posts as $post)
         <div class="bg-white rounded-2xl mt-4">
             <h1 class="p-4 font-semibold">

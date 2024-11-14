@@ -12,12 +12,20 @@
             <h1 class="p-4 font-semibold">
                 {{ $post->title }}
             </h1>
-            <div class="absolute top-5 right-5">
+            <div class="absolute top-5 right-5 flex flex-reverse">
                 <a href="{{ route('post.edit', $post) }}">
                     <x-primary-button class="bg-cyan-500 hover:bg-cyan-800 active:bg-cyan-300">
                         編集
                     </x-primary-button>
                 </a>
+
+                <form method="post" action="{{ route('post.destroy', $post) }}" class="ml-2">
+                    @csrf
+                    @method('delete')
+                    <x-primary-button class="bg-red-700 hover:bg-red-500 active:bg-red-300">
+                        削除
+                    </x-primary-button>
+                </form>
             </div>
         </div>
         <hr style="width:98%;" class="mx-auto">
