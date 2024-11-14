@@ -4,76 +4,89 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 
-
-class PostController extends Controller
+class Postcontroller extends Controller
 {
-    public function create() {
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
         return view('post.create');
     }
 
-
-    public function store(Request $request) {
-        Gate::authorize('test');
-        
-        $validated = $request->validate(
-            [
-                'title' => 'required|max:20',
-                'body' => 'required|max:1000',
-            ]
-        );
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $validated = $request -> validate([
+            'title' => 'required|max:50',
+            'body' => 'required|max:400',
+        ]);
 
         $validated['user_id'] = auth()->id();
 
         $post = Post::create($validated);
 
-        // 処理後、元のページに戻る
-        // セッションを使って保存時のメッセージを表示
-        return back()->with('message', '保存しました。');
+        $request ->session() ->flash('message', '保存しました');
+
+        return redirect() ->route('post.index');
     }
 
-
-    public function index() {
-        // 抽出条件を設定
-        // $posts=Post::where('user_id', auth()->id())->get();
-
-        // Eagerロードを使用。（postと同時にuserのデータも一括で取得）
-        $posts=Post::with('user')->get();
-        return view('post.index', compact('posts'));
-    }
-
-
-    public function show(Post $post) {
+    /**
+     * Display the specified resource.
+     */
+    public function show(Post $post)
+    {
         return view('post.show', compact('post'));
     }
 
-
-    public function edit(Post $post) {
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Post $post)
+    {
         return view('post.edit', compact('post'));
     }
 
-
-    public function update(Request $request, Post $post) {
-        $validated = $request->validate(
-            [
-                'title' => 'required|max:20',
-                'body' => 'required|max:1000',
-            ]
-        );
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Post $post)
+    {
+        $validated = $request -> validate([
+            'title' => 'required|max:50',
+            'body' => 'required|max:400',
+        ]);
 
         $validated['user_id'] = auth()->id();
 
         $post -> update($validated);
 
-        $request -> session() -> flash('message', '更新しました');
-        return back();
+        $request ->session() ->flash('message', '更新しました');
+
+        return redirect() ->route('post.show', compact('post'));
     }
 
-
-    public function destroy(Request $request, Post $post) {
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Request $request, Post $post)
+    {
         $post -> delete();
-        $request -> session() -> flash('message', '削除しました');
-        return redirect() -> route('post.index');
+
+        $request ->session() ->flash('message', '削除しました');
+
+        return redirect() ->route('post.index');
     }
 }
