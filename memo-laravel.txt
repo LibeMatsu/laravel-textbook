@@ -1,0 +1,27 @@
+
+例えば、
+Post $postは、
+Postクラスの$postオブジェクト（Post型）
+
+
+$post = Post::create($validated);
+↑
+同じ意味。
+$validatedのデータを使って新しいPostオブジェクトを作成し、それをデータベースに保存する。
+※ 新しく作成されたPostオブジェクトを返す
+↓
+$post = new Post($validated);
+$post->save();
+
+
+PostモデルでIlluminate\Database\Eloquent\Model;をextendしていて、
+$post->update()などの関数を使えるようにしてある。
+
+
+
+
+$post = Post::find($id); // 既存のPostオブジェクトを取得
+※ 返り値は真偽値（更新されたかどうか）
+
+$post->update($validated); // そのオブジェクトを更新
+※ オブジェクトに定義された関数を使っている
