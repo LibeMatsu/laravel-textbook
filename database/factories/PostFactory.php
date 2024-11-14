@@ -17,7 +17,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake() ->text(30),
+            'title' => fake() ->realText(30),
             'body' => fake() ->realText(80),
             // ↓ post作成時に新しいuserを作成して、user_idには、そのuserのidを入れる
             'user_id' => \App\Models\User::factory(),
