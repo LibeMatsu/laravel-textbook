@@ -20,3 +20,37 @@ php artisan db:seed --class=シーダークラス名
 
 php artisan test テストファイル
 テストの実行
+
+
+
+【 Seeder 】
+
+◆ Illuminate\Support\Facades\DBを使う場合
+データベースに直接SQL文を書いてデータを操作することができる
+
+例）
+use Illuminate\Support\Facades\DB;
+
+DB::table('posts')->insert([
+    'title' => '初めての投稿',
+    'content' => 'これは初めての投稿です。',
+]);
+
+
+
+◆ \App\Models\Post::createを使う場合
+LaravelのEloquent ORM（オブジェクト関係マッピング）を利用してデータを操作することができる。
+※ モデルを使ってデータを操作するやり方
+
+例）
+use App\Models\Post;
+
+Post::create([
+    'title' => '初めての投稿',
+    'content' => 'これは初めての投稿です。',
+]);
+
+
+
+DBファサードを使うと、SQL文を直接書くので、細かい制御ができるがコードが複雑になることも。
+Eloquent ORMはコードがシンプルになるが、複雑なカスタマイズは難しいかも。
