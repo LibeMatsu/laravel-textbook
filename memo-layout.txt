@@ -28,3 +28,12 @@ HTMLの中でその改行をそのまま表示する。
 .flex-row-reverse {
     flex-direction: row-reverse;
 }
+
+
+
+
+※ Laravelのロゴ
+
+Login画面： 70 x 70ぐらい
+PC menu： 36 x 36
+
