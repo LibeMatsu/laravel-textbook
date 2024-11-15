@@ -4,7 +4,7 @@ composer create-project "laravel/laravel=10.*" laravel-textbook
 
 
 ◆ timezoneの変更
-config/app.phpにてAsia/Tokyoに
+app/config/app.phpにてAsia/Tokyoに
 
 
 ◆ phpmyadminでデータベースを作成
@@ -17,6 +17,8 @@ config/app.phpにてAsia/Tokyoに
 ◆ 認証を実装するならLaravel Breezeパッケージを追加する
 （ルーティングファイルが上書きされるので、早い段階で入れておいた方が良い）
 composer require laravel/breeze --dev
+
+※ ↑--dev オプションを使うと、開発中にのみ使用される設定になる
 
 
 ◆ Laravel Breezeパッケージのインストール
@@ -40,7 +42,7 @@ npm run build
 
 
 ◆ 日本語に対応１
-config/app.phpにて 
+app/config/app.phpにて 
 'locale' => 'ja'
 'faker_locale' => 'ja_JP'
 
