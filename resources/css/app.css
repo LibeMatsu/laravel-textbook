@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.message {
-    color: blue;
-    font-size: 20px;
-}
