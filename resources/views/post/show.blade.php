@@ -7,6 +7,14 @@
 
     <div class="w-4/5 mx-auto py-10">
 
+    <!-- @if(session('message'))
+        <div class="text-red-600 font-bold">
+            {{ session('message') }}
+        </div>
+    @endif -->
+
+    <x-message :message="session('message')" />
+
     <div class="bg-white rounded-2xl mt-4 ">
         <div class="relative h-16">
             <h1 class="p-4 font-semibold">

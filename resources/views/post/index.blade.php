@@ -8,11 +8,13 @@
     <div class="w-4/5 mx-auto py-10">
 
     
-    @if(session('message'))
+    <!-- @if(session('message'))
         <div class="text-red-600 font-bold">
-            {{ session('message')}}
+            {{ session('message') }}
         </div>
-    @endif
+    @endif -->
+
+    <x-message :message="session('message')" />
 
 
     @foreach($posts as $post)
